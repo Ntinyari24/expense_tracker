@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
-from database import initialize_database, add_transaction
-from auth import register_user, login_user
-from models.income import Income, IncomeSchema
-from models.expenses import Expense, ExpenseSchema
-from models.transaction_type import TransactionType
+from expense_tracker.database import initialize_database, add_transaction
+
+from expense_tracker.auth import register_user, login_user
+from expense_tracker.models.income import Income, IncomeSchema
+from expense_tracker.models.expenses import Expense, ExpenseSchema
+from expense_tracker.models.transaction_type import TransactionType
 app = Flask(__name__)
 
 initialize_database()
